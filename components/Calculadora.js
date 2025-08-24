@@ -8,7 +8,6 @@ function Calculadora() {
   const [resultado, setResultado] = useState();
 
   const somar = () => {
-    console.log(campo1);
     if (isNumber(campo1) && isNumber(campo2)) {
       setResultado(campo1 + campo2);
     } else {
