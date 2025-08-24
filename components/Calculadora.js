@@ -8,11 +8,18 @@ function Calculadora() {
   const [resultado, setResultado] = useState();
 
   const somar = () => {
+    console.log(campo1);
     if (isNumber(campo1) && isNumber(campo2)) {
       setResultado(campo1 + campo2);
     } else {
       setResultado("Por favor, insira números válidos.");
     }
+  };
+
+  const limpar = () => {
+    setResultado("");
+    setCampo1();
+    setCampo2();
   };
 
   const campo1Change = (event) => {
@@ -49,6 +56,7 @@ function Calculadora() {
       </Text>
       <Text>O Resultado é: {resultado}</Text>
       <Button onPress={somar} title="Somar"></Button>
+      <Button onPress={limpar} title="Limpar"></Button>
     </View>
   );
 }
